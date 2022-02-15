@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+{% include 'normalHeader.html' %}
+			<!-- Main Wrapper -->
+			<div id="main-wrapper">
+				<div class="wrapper style2">
+					<div class="inner">
+						<section class="container box feature3">
+							<div class="row aln-center">
+								<div class="col-9 col-12-medium">
+									<div class="session">
+									<h2>{{ title }}</h2>
+									<!--<h4>Meet Room Link : -->
+									<!--<i class="fas fa-link">&nbsp<a href="{{link}}" target="_blank">{{link}}</a></i>-->
+									<!--</h4>-->
+									<div id="tab">
+										<ul class="tab-title">
+										    {% if "Open | Opening" not in title and "Award | " not in title and "Challenge 3 | " not in title %}
+											<li><a href="#details">Details</a></li>
+											{% endif %}
+											{% if "Tutorial | Tutorial" not in title %}
+											<li><a href="#chairs">Chairs</a></li>
+											{% endif %}
+											<li class="extra"><a href="{{ link }}" target="_blank">Meet Room&nbsp;&nbsp;<i class="fas fa-link" style="color: inherit;"></i></a></li>
+											<!--<li class="extra"><a href="" onclick="window.alert('Meet room will be available on 16 November.');">Meet Room&nbsp;&nbsp;<i class="fas fa-link" style="color: inherit;"></i></a></li>-->
+										</ul>
+										  <div id="details" class="tab-inner">
+											{% for p in  paper %}
+											<div class="sd-time hidden">
+       											<div class="sd-topic"><a>{{p.title}}</a></div>
+        										<div class="sd-info">
+													<i class="fas fa-users"></i><a>{{p.author}}</a>
+													<br>
+													<i class="fa fa-university" aria-hidden="true"></i><a>{{p.school}}</a>
+												</div>
+												
+											</div>
+											<div class="sd-content" style="display: none;">
+												<h4>Abstract</h4>
+												<p>{{ p.content }}</p>
+											</div>
+										  	{% endfor %}
+										  </div>
+										  <div id="chairs" class="tab-inner">
+										  {% for c in chair %}
+										    <div class="chair-item">
+        									    <br>
+        									    <div style="height: 130px;">
+            									    {% if c.img and c.img.strip %}
+            									        <img src="{{ c.img }}" style="width: 120px; height: auto; border-radius: 100%;"/>
+            									    {% else %}
+            									        <i class="fas fa-user-circle" style="width: 120px; height: auto; font-size: 120px"></i>
+            									    {% endif %}
+        									    </div>
+        									    <h4 style="margin-bottom: 0;">{{ c.chair }}</h4>
+        									    <a>{{c.school}}</a>
+        									    <br>
+        									    <!--<h3>To be announced.</h3>-->
+        								    </div>
+        								  {% endfor %}    
+										  </div>
+									  </div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+{% endblock %}

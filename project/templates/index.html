@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+{% include 'normalHeader.html' %}
+			<div id="header-wrapper">
+				<div class="container">
+					<!-- Banner -->
+						<div id="banner">
+							<h2>ACM International Conference on Multimedia Retrieval</h2>
+							<p>Taipei, Taiwan, November 16-19, 2021 (Virtual)</p>
+						</div>
+				</div>
+			</div>
+		
+			<!-- Main Wrapper -->
+			<div id="main-wrapper">
+				<div class="wrapper style2">
+					<div class="inner">
+						<section class="container box feature3">
+							<div class="row">
+								<div class="col-9 col-12-medium">
+									<section>
+										<h2>Welcome</h2>
+										<p>Effectively and efficiently retrieving information based on user needs is one of the most exciting areas in multimedia research. The Annual ACM International Conference on Multimedia Retrieval (ICMR) offers a great opportunity for exchanging leading-edge multimedia retrieval ideas among researchers, practitioners and other potential users of multimedia retrieval systems.
+This annual conference, which puts together the long-lasting experiences of the former ACM CIVR (International Conference on Image and Video Retrieval) and ACM MIR (International Conference on Multimedia Information Retrieval) series, was set up in 2011 to illuminate the state of the arts in multimedia (e.g., text, image, video, audio, sensor data, 3D) retrieval. Following the successful previous editions of ICMR (see the complete ICMR history here): Trento, Italy 2011; Hong Kong, China 2012; Dallas, USA 2013; Glasgow, UK 2014; Shanghai, China 2015; New York, USA 2016; Bucharest, Romania 2017; Yokohama, Japan 2018; Ottawa, Canada 2019; and Dublin, Ireland 2020.
+ACM ICMR 2021 is calling for papers presenting significant and innovative research in multimedia retrieval and related fields. Papers should extend the state of the art by addressing new problems or proposing insightful solutions. The scope of the conference includes core topics in multimedia retrieval and recommendation, as well as the broader set of topics that must be addressed to ensure that multimedia retrieval technologies are of practical use in real-world use cases. Special emphasis is placed on topics related to large-scale indexing, mixed reality user interaction, exploiting diverse and multimodal data, and domain-specific challenges.</p>
+									</section>
+								</div>
+								{% comment %} <div class="col-12 col-12-medium">
+									<section>
+										<a><img src="{% static 'img/logo-big.png' %}" style="width: 100%;"></a>
+									</section>
+								</div> {% endcomment %}
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+{% endblock %}

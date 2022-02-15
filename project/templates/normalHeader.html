@@ -1,0 +1,32 @@
+            {% load static %}
+            <header id="header">
+				<div class="inner">
+					<!-- Logo -->
+						<a id="logo" href="http://icmr2021.org/" target="_blank"><img src="{% static 'img/logo.png' %}"></a>
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="/virtual/">Home</a></li>
+								<li>
+									<a href="/virtual/schedule/">Schedule</a>
+								</li>
+							</ul>
+						</nav>
+						<nav id="nav">
+							<ul class="user">
+								<li>Hi, {{request.user}}
+									<ul>
+									    <li><a href="/virtual/profile/">My Profile</a></li>
+										<li><a href="/virtual/accounts/logout/">Log Out</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+						<!--<nav id="nav">-->
+				</div>
+			</header>
+            <div id="time-wrapper">
+				<a href="https://time.is/UTC" id="time_is_link" rel="nofollow">Coordinated Universal Time (UTC+0) </a><span id="UTC_za00"></span>
+				<a href="https://time.is/China_Standard_Time" id="time_is_link" rel="nofollow">China Standard Time CST (UTC+8) </a><span id="China_Standard_Time_z429"></span>
+				<a href="https://time.is/EST" id="time_is_link" rel="nofollow">Estern Standard Time EST (UTC-5) </a><span id="EST_z113"></span>
+			</div>

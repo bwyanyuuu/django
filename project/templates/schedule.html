@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+{% include 'normalHeader.html' %}
+			<!-- Main Wrapper -->
+			<div id="main-wrapper">
+				<div class="wrapper style2">
+					<div class="inner">
+						<section class="container box feature3">
+							<div class="row aln-center">
+								<div class="col-9 col-12-medium">
+									<p>All of the time is presented in UTC+8.</p>
+									<div id="tab">
+										<ul class="tab-title">
+										{% for d in day %}
+        								    <li class="date-tab"><a href="#day{{d.idx}}">{{d.date}}</a></li>
+										{% endfor %}
+										</ul>
+										{% for d in day %}
+										<div id="day{{d.idx}}" class="tab-inner">
+											{% for s in d.session %}
+											<div class="sc-item" onclick="window.location='/virtual/session/?id={{s.ssid}}'">
+											<div class="sc-type"><a>{{s.ssid}}</a></div>
+											<div class="sc-topic"><a>{{s.topic}}</a></div>
+											<div class="sc-info">
+												<i class="far fa-calendar-alt"></i><a>{{s.date}}</a>
+												<i class="far fa-clock"></i><a>{{s.time}}</a>
+											</div>
+											</div>
+											{% endfor %}
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+{% endblock %}

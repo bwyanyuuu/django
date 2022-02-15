@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% include 'normalHeader.html' %}
+		
+			<!-- Main Wrapper -->
+			<div id="login-wrapper">
+				<div class="wrapper style2">
+					<div class="inner">
+						<section class="container box feature3">
+							<div class="row aln-center">
+                                <div class="profile">
+                                    <h2>Edit Profile</h2>
+                                    <h5>Email</h5><p class="normal">{{ user.username }}</p>
+                                    <form action="" method="POST">
+                                        {% csrf_token %}
+                                        {% for field in form %}
+                                            <h5>{{field.label}}</h5>{{ field }}
+                                            <h4>  </h4>
+                                        {% endfor %}
+                                        <input type="submit" value="Save">
+                                    </form>
+                                </div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+{% include 'loginHeader.html' %}
+			<!-- Main Wrapper -->
+				<div id="login-wrapper">
+					<section class="container">
+						<div class="row aln-center">	
+							<div class="login">
+								<h2>Log In</h2>
+								<form action="" method="POST">
+									{% csrf_token %}
+									{% for field in form %}
+										<h4>{{field.label}}</h4>
+										{{ field }}
+										<h4>  </h4>
+									{% endfor %}
+									<p>{{ error }}</p>
+									<input type="submit" value="Log In">
+								</form>
+								<span style="text-align: center;">Doesn't have account? <a href="/part1_1.php">Register</a></span>
+								 |
+								<a href="/virtual/accounts/password_reset/">Forgot Password?</a>
+							</div>
+						</div>
+				</section>
+				</div>
+{% endblock %}

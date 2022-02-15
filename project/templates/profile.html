@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% include 'normalHeader.html' %}
+		
+			<!-- Main Wrapper -->
+			<div id="login-wrapper">
+				<div class="wrapper style2">
+					<div class="inner">
+						<section class="container box feature3">
+							<div class="row aln-center">
+								<div class="profile">
+                                    <h2>Profile</h2>
+                                    <h5>Email</h5><p class="normal">{{ user.username }}</p>
+                                    <h5>First Name</h5><p class="normal">{{ user.first_name }}</p>
+                                    <h5>Middle Name</h5><p class="normal">{{ user.middle_name }}</p>
+                                    <h5>Last Name</h5><p class="normal">{{ user.last_name }}</p>
+                                    <h5>Affiliation</h5><p class="normal">{{ user.affiliation }}</p>
+                                    {% if isSelf %}
+                                    <a href="/virtual/edit_profile/">Edit</a>
+                                    <a href="/virtual/change_password/">Change Password</a>
+                                    <form target="_blank" action="https://icmr2021.org/pay_after.php" method="POST">
+                                        <button value="{{ user.username }}" name="email">Registration Payment</button>
+                                    </form>
+                                    {% endif %}
+                                </div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+{% endblock %}
